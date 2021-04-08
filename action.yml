@@ -1,0 +1,20 @@
+
+name: PR-Line-Labeler
+description: This action adds a Lebel to the PR based on number of changes made
+inputs:
+  token: # token variable available in workflow as env var named INPUT_TOKEN
+    required: true
+    description: Token of the user that creates the issue
+  configuration-path:
+    description:  'Path to the labeler.yml configuration file'
+    required: false
+  repo:
+    required: true
+    description: repo url in the form owner/repo
+runs:
+  using: docker # we are saying this action will run on docker
+  image: 'Dockerfile' # we will use our own Dockerfile to build an image and run it.
+
+branding: #generates a logo for our action
+  icon: monitor
+  color: blue # background color of the logo of our action
