@@ -18,7 +18,6 @@ class Label_Controller:
 
 
         g = github.Github(g_token)
-        assert g.get_user().login
 
         rate_limit = g.get_rate_limit()
 
