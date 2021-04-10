@@ -2,32 +2,19 @@
 import sys, os
 import requests
 import github
-# from pprint import pprint
+from pprint import pprint
 
 # required to run the script locally
-# from os.path import join, dirname
-# from dotenv import load_dotenv
+from os.path import join, dirname
+from dotenv import load_dotenv
 
-# dotenv_path = join(dirname(__file__), "../.env")
-# load_dotenv(dotenv_path)
+dotenv_path = join(dirname(__file__), "../.env")
+load_dotenv(dotenv_path)
 class Label_Controller:
     def __init__(self, g_token,g_repo):
-        g_owner,g_repo = g_repo.split("/")
-        assert isinstance(g_owner, str)
-        assert isinstance(g_repo, str)
-
-
         g = github.Github(g_token)
+        self._repo = g.get_repo(g_repo)
 
-        rate_limit = g.get_rate_limit()
-
-        orgs = [org.login for org in g.get_user().get_orgs()]
-        
-        if g_owner in orgs:
-            owner = g.get_organization(g_owner)
-        else:
-            owner = g.get_user()
-        self._repo = owner.get_repo(g_repo)
 
 
 
