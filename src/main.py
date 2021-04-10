@@ -5,10 +5,10 @@ import github
 from pprint import pprint
 
 # required to run the script locally
-from os.path import join, dirname
-from dotenv import load_dotenv
+# from os.path import join, dirname
+# from dotenv import load_dotenv
 
-dotenv_path = join(dirname(__file__), "../.env")
+# dotenv_path = join(dirname(__file__), "../.env")
 load_dotenv(dotenv_path)
 class Label_Controller:
     def __init__(self, g_token,g_repo):
