@@ -9,7 +9,7 @@ from pprint import pprint
 # from dotenv import load_dotenv
 
 # dotenv_path = join(dirname(__file__), "../.env")
-load_dotenv(dotenv_path)
+#load_dotenv(dotenv_path)
 class Label_Controller:
     def __init__(self, g_token,g_repo):
         g = github.Github(g_token)
